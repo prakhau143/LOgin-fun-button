@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .btn {
+      position: relative;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function moveButton() {
+      let password = document.getElementById("password").value;
+      let button = document.getElementById("btn");
+  
+      if (password !== "legend") {
+        let x = Math.random() * (window.innerWidth - 100);
+        let y = Math.random() * (window.innerHeight - 100);
+        button.style.position = "absolute";
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+      }
+    }
+  </script>
+<body>
+    <div class="container">
+        <h2>Enter Password</h2>
+        <input type="password" id="password" placeholder="Type something..." oninput="moveButton()">
+        <br><br>
+        <button id="btn" class="btn" onclick="alert('You got lucky!')">Login</button>
+    </div>
+</body>
+</html>
